@@ -2,6 +2,16 @@ import scala.annotation.tailrec
 
 def randomStringGen(length: Int) = scala.util.Random.alphanumeric.take(length).mkString
 
+// used by #6 and #7
+def randomStringFromCharList(length: Int, chars: Seq[Char]): String = {
+  val sb = new StringBuilder
+  for (i <- 1 to length) {
+    val randomNum = util.Random.nextInt(chars.length)
+    sb.append(chars(randomNum))
+  }
+  sb.toString
+}
+
 // 1 - a java-esque approach
 def randomString(length: Int) = {
   val r = new scala.util.Random
@@ -93,16 +103,6 @@ def randomNumeric(length: Int): String = {
 
 println("8:  " + randomNumeric(10))
 
-// used by #6 and #7
-def randomStringFromCharList(length: Int, chars: Seq[Char]): String = {
-  val sb = new StringBuilder
-  for (i <- 1 to length) {
-    val randomNum = util.Random.nextInt(chars.length)
-    sb.append(chars(randomNum))
-  }
-  sb.toString
-}
-
 def x(length: Int, chars: Seq[Char]): String = {
   val list = List.range(1, length)
   val arr = new Array[Char](length)
@@ -119,7 +119,7 @@ def x2(length: Int, chars: Seq[Char]): String = {
 
 println("x2: " + x2(10, ('a' to 'z') ++ ('A' to 'Z')))
 
-val df = spark.sparkContext.parallelize(Seq.fill(4000){(randomStringGen(4), randomStringGen(4), randomStringGen(6))}, 10).toDF("col_1", "col_2", "col_3")
+val df = spark.sparkContext.parallelize(Seq.fill(1000000){(randomStringGen(15),randomAlpha(6), randomAlpha(10), randomNumeric(10))}, 10).toDF("id","firstname", "lastname", "phonenumber")
 
 df.show
 
