@@ -12,6 +12,7 @@ su - hadoop
 
 ```
 ~/hadoop-3.3.4/sbin/start-dfs.sh
+
 ~/hadoop-3.3.4/sbin/start-yarn.sh
 ```
 
@@ -19,7 +20,9 @@ su - hadoop
 
 ```
 hadoop-3.3.4/bin/hdfs namenode -format
+
 hadoop-3.3.4/bin/hdfs dfs -ls /user/hadoop
+
 hadoop-3.3.4/bin/hdfs dfs -put rossmann-store-sales/train.csv
 ```
 
