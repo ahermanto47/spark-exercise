@@ -1,14 +1,7 @@
 # spark-exercise
 
-oc apply -f manifest\operator-cm.yaml
+> Here you can find various method you can setup your spark environment. Ive managed to run spark with below config:
 
-oc apply -f manifest\cluster-cm.yaml
-
-# login to master
-
-oc exec --stdin --tty my-spark-cluster-m-jtr5c -- /bin/bash
-
-spark-shell
-
-# key in contents in src/test/test.scala
-
+1. localhost
+2. minikube
+3. openshift
