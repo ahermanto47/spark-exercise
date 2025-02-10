@@ -1,6 +1,6 @@
 # spark-exercise on minikube
 
-> One option to run spark is to use JupyterHub running in kubernetes. In this case we can use google's minikube platform. You can try this setup if your machine have at least 4 cores and 16GB RAM. As a prerequisite, you need to install minikube. See here for information on how to install and configure minikube - [title](https://minikube.sigs.k8s.io/docs/). Once minikube is installed, here are the steps to build your spark playground;
+> One option to run spark is to use JupyterHub running in kubernetes. In this case we can use google's minikube platform. You can try this setup if your machine have at least 4 cores and 16GB RAM. As a prerequisite, you need to install minikube. See here for information on how to install and configure minikube - [minikube](https://minikube.sigs.k8s.io/docs/). Once minikube is installed, here are the steps to build your spark playground;
 
 1. Start minikube with 4 cpus and 16GB ram
 
@@ -62,6 +62,6 @@ helm upgrade --cleanup-on-fail --install jupyterhub jupyterhub/jupyterhub --name
 
 9. test using pyspark_k8s_example.ipynb
 
-## Known Issues:
+## known issues:
 1. unable to read downloaded files
 2. it seems like it wants a hadoop like system to work with files
