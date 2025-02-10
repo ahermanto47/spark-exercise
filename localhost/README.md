@@ -59,9 +59,11 @@ cd ms-sql/unit-testing
 /opt/mssql-tools/bin/sqlcmd -No -S "192.168.39.110,32611" -U sa -C -P password123 -i test1.sql
 ```
 
-## known issues on store procedure call with pyspark and scala:
-1. pyspark
-    a. issue retrieving out parameter
-2. scala
-    b. use java native sql classes
+## known issues on store procedure call with pyspark
+
+1. issue retrieving out parameter
+
+## known issues on store procedure call with scala
+
+1. use java native sql classes
 
